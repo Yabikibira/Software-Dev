@@ -1,5 +1,9 @@
 import java.util.Scanner;
-class Debug {
+class Debug {/*
+ This program calculates tax reductions for a group of people.:3
+ It asks how many people then adds extra reductions
+ and lastly prints the total tax reduction.:]
+*/
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);//reads what the user inputs in and assigns it to sc ;p
         System.out.println("Enter your yearly salary");//prints out the string in the "" and waita for the users answer on the next line
