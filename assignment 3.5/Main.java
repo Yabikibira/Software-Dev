@@ -29,5 +29,5 @@ class Debug {
             System.out.println("No applicable reduction on taxes found.");// in the ends if all the loops do not fulfil the requirments it will print the string as a last case
         }
 
-    }
+    }//i commented as much cause i kinda got carried away and wanted the comments to be super clear and incase u didnt get it i explained it again <3
 }
