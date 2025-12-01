@@ -1,0 +1,60 @@
+import java.io.*; 
+import java.util.ArrayList; 
+import java.util.List; 
+import java.util.Scanner; 
+
+public class Main { 
+    public static void main(String[] args){ 
+        // create a File object that points to the txt file we want to read
+        // (this file should be in the same directory as this Main.java file)
+        File inputfile = new File("students.txt"); 
+
+        // list that will store all the names so we can see their indices later
+        List<String> list = new ArrayList<>();
+
+        // list that will store only the names with GPA over 3.5
+        List<String> highGpaNames = new ArrayList<>();
+
+        // variable to count how many names are in total
+        int totalNames = 0;
+
+        try { 
+            // scanner that reads from the file (not from the keyboard)
+            Scanner input = new Scanner(inputfile); 
+
+            // loop while there is still data in the file
+            while(input.hasNext()){ 
+                // read the next name from the file
+                String studentName = input.next();
+                // read the GPA that comes right after the name
+                double studentGpa = input.nextDouble();
+
+                // add this name to the main list so we can see its index later
+                list.add(studentName);
+
+                // increase the counter of total names
+                totalNames++;
+
+                // check if this student's GPA is greater than 3.5
+                if (studentGpa > 3.5) {
+                    // if yes, save this name in the high GPA list
+                    highGpaNames.add(studentName);
+                }
+            } 
+
+            // close the scanner when we are done using the file
+            input.close();
+
+        } catch (FileNotFoundException e) { 
+            throw new RuntimeException(e); 
+        } 
+
+        // optional if you want to keep this, just to show what the indices are of the list you created 
+        System.out.println(list); 
+
+        // print how many names there were in total
+        System.out.println("Total number of names: " + totalNames);
+
+        // print which names had a GPA over 3.5
+        System.out.println("Names with GPA over 3.5: " + highGpaNames);
+    } 
